@@ -33,7 +33,8 @@ const kinds = {
     'Desayuno en el dominó',
     'Quesillo + mermelada',
     'Huevos',
-    'lo mismo que ayer'
+    'TurboAvena (Avena + leche + café) :pepe-maneja:',
+    'Lo mismo que ayer'
   ],
   almuerzo: [
     'Pescado',
@@ -50,7 +51,13 @@ const kinds = {
     'Comida Chatarra',
     'Ceviche',
     'Carne/Parrilla',
-    'lo mismo que ayer'
+    'Lo mismo que ayer',
+    'Tallarines con salsa',
+    'Lentejas de caja :pepe-maneja:',
+    'Pescao con algo (arrocito, etc...)',
+    'Cocina wn, la economía está brigida :hidethepain:',
+    'Sopa de pan :hidethepain:',
+    'Crema de verduras'
   ],
   cena: [
     'Carne',
@@ -63,7 +70,8 @@ const kinds = {
     'Lasagna',
     'Ceviche',
     'Comida China',
-    'lo mismo que ayer'
+    'Lo mismo que ayer',
+    'Tocomples con tecito :chef-kiss:'
   ],
   bebidas: [
     'Cerveza',
@@ -74,7 +82,7 @@ const kinds = {
     'Absenta',
     'Pájaro verde',
     'Vino tinto/blanco',
-    'lo mismo que ayer nomás'
+    'Lo mismo que ayer nomás'
   ],
   cervezas: [
     'Pale Ale inglesa',

@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dokku": {
-      "postdeploy": "sleep 5 && curl --data 'action=post-deploy&app=Huemul&url=https://huemul.devschile.cl' https://huemul.devschile.cl/dokku/huemul-devs"
+      "postdeploy":
+        "sleep 5 && curl --data 'action=post-deploy&app=Huemul&url=https://huemul.devschile.cl' https://huemul.devschile.cl/dokku/huemul-devs || true"
     }
   }
 }

@@ -13,15 +13,18 @@ test.beforeEach(t => {
 test.afterEach(t => t.context.room.destroy())
 
 test('Torrent de Titanic', async t => {
-  nock('https://yts.am')
+  nock('https://yts.mx')
     .get('/api/v2/list_movies.json')
     .query({ limit: 5, query_term: 'titanic' })
     .reply(200, {
       data: {
-        movie_count: 2,
+        movie_count: 20,
         movies: [
-          { url: 'https://yts.am/movie/titanic-1997', title: 'Titanic', year: 1997, rating: 7.8 },
-          { url: 'https://yts.am/movie/titanic-1953', title: 'Titanic', year: 1953, rating: 7.2 }
+          { url: 'https://yts.mx/movies/titanic-25-years-later-with-james-cameron-2023', title: 'Titanic: 25 Years Later with James Cameron', year: 2023, rating: 6.5 },
+          { url: 'https://yts.mx/movies/titanic-waltz-1965', title: 'Titanic Waltz', year: 1965, rating: 8.6 },
+          { url: 'https://yts.mx/movies/the-blind-man-who-did-not-want-to-see-titanic-2021', title: 'The Blind Man Who Did Not Want to See Titanic', year: 2021, rating: 7.5 },
+          { url: 'https://yts.mx/movies/titanic-666-2022', title: 'Titanic 666', year: 2022, rating: 3.2 },
+          { url: 'https://yts.mx/movies/the-chambermaid-on-the-titanic-1997', title: 'The Chambermaid on the Titanic', year: 1997, rating: 6.6 }
         ]
       }
     })
@@ -37,9 +40,12 @@ test('Torrent de Titanic', async t => {
 
   // test response messages of hubot
   t.deepEqual(hubotMessage1, ['hubot', 'Esperando respuesta de YTS YIFY... :loading:'])
-  const text = `Encontradas 2 coincidencias:
-<https://yts.am/movie/titanic-1997|Titanic: año: 1997, rating: 7.8>
-<https://yts.am/movie/titanic-1953|Titanic: año: 1953, rating: 7.2>
+  const text = `Encontradas 20 coincidencias:
+<https://yts.mx/movies/titanic-25-years-later-with-james-cameron-2023|Titanic: 25 Years Later with James Cameron: año: 2023, rating: 6.5>
+<https://yts.mx/movies/titanic-waltz-1965|Titanic Waltz: año: 1965, rating: 8.6>
+<https://yts.mx/movies/the-blind-man-who-did-not-want-to-see-titanic-2021|The Blind Man Who Did Not Want to See Titanic: año: 2021, rating: 7.5>
+<https://yts.mx/movies/titanic-666-2022|Titanic 666: año: 2022, rating: 3.2>
+<https://yts.mx/movies/the-chambermaid-on-the-titanic-1997|The Chambermaid on the Titanic: año: 1997, rating: 6.6>
 Todos los resultados en *<https://yts.ag/browse-movies/titanic|yts.arg>*`
   t.deepEqual(hubotMessage2, ['hubot', text])
 })
